@@ -1,0 +1,13 @@
+fields:
+    location:
+        label: location
+        span: auto
+        type: text
+    Slug:
+        label: slug
+        span: auto
+        dependsOn: {  }
+        preset:
+            field: location
+            type: slug
+        type: text

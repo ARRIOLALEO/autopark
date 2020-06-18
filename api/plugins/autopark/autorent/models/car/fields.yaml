@@ -1,0 +1,41 @@
+fields:
+    tittle:
+        label: tittle
+        span: auto
+        type: text
+    slug:
+        label: slug
+        span: auto
+        preset:
+            field: tittle
+            type: slug
+        type: text
+    description:
+        label: description
+        size: ''
+        span: auto
+        type: richeditor
+    location:
+        label: location
+        nameFrom: location
+        descriptionFrom: description
+        span: auto
+        type: relation
+    price1:
+        label: 'Price 1 - 3'
+        span: auto
+        type: text
+    image:
+        label: 'Upload Image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    avaliable:
+        label: avaliable
+        span: auto
+        default: 1
+        type: switch

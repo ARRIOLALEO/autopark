@@ -1,0 +1,10 @@
+name: Cars
+form: $/autopark/autorent/models/car/fields.yaml
+modelClass: Autopark\Autorent\Models\Car
+defaultRedirect: autopark/autorent/cars
+create:
+    redirect: 'autopark/autorent/cars/update/:id'
+    redirectClose: autopark/autorent/cars
+update:
+    redirect: autopark/autorent/cars
+    redirectClose: autopark/autorent/cars

@@ -1,0 +1,9 @@
+columns:
+    tittle:
+        label: tittle
+        type: text
+        searchable: true
+        sortable: true
+    avaliable:
+        label: avaliable
+        type: switch

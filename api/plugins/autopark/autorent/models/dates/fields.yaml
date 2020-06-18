@@ -1,0 +1,11 @@
+fields:
+    pickup:
+        label: pickup
+        mode: datetime
+        span: auto
+        type: datepicker
+    dropoff:
+        label: Dropoff
+        mode: datetime
+        span: auto
+        type: datepicker

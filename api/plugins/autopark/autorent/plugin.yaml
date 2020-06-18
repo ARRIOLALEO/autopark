@@ -1,0 +1,20 @@
+plugin:
+    name: 'autopark.autorent::lang.plugin.name'
+    description: 'autopark.autorent::lang.plugin.description'
+    author: autopark
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: cars
+        url: autopark/autorent/cars
+        icon: icon-car
+        sideMenu:
+            side-menu-item:
+                label: Location
+                url: autopark/autorent/location
+                icon: icon-map-marker
+            side-menu-item2:
+                label: Dates
+                url: autopark/autorent/date
+                icon: icon-calendar

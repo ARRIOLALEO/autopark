@@ -1,0 +1,10 @@
+name: Date
+form: $/autopark/autorent/models/dates/fields.yaml
+modelClass: Autopark\Autorent\Models\Dates
+defaultRedirect: autopark/autorent/date
+create:
+    redirect: 'autopark/autorent/date/update/:id'
+    redirectClose: autopark/autorent/date
+update:
+    redirect: autopark/autorent/date
+    redirectClose: autopark/autorent/date

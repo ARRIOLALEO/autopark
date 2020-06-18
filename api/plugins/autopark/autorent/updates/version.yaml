@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table autopark_autorent_cars'
+    - builder_table_create_autopark_autorent_cars.php
+1.0.3:
+    - 'Created table autopark_autorent_'
+    - builder_table_create_autopark_autorent_.php
+1.0.4:
+    - 'Created table autopark_autorent_location'
+    - builder_table_create_autopark_autorent_location.php
+1.0.5:
+    - 'Created table autopark_autorent_auto_locat'
+    - builder_table_create_autopark_autorent_auto_locat.php
+1.0.6:
+    - 'Created table autopark_autorent_dates'
+    - builder_table_create_autopark_autorent_dates.php

@@ -1,0 +1,10 @@
+name: Location
+form: $/autopark/autorent/models/location/fields.yaml
+modelClass: Autopark\Autorent\Models\Location
+defaultRedirect: autopark/autorent/location
+create:
+    redirect: 'autopark/autorent/location/update/:id'
+    redirectClose: autopark/autorent/location
+update:
+    redirect: autopark/autorent/location
+    redirectClose: autopark/autorent/location
