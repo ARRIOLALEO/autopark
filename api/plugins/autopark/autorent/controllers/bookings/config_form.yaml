@@ -1,0 +1,10 @@
+name: Bookings
+form: $/autopark/autorent/models/book/fields.yaml
+modelClass: Autopark\Autorent\Models\Book
+defaultRedirect: autopark/autorent/bookings
+create:
+    redirect: 'autopark/autorent/bookings/update/:id'
+    redirectClose: autopark/autorent/bookings
+update:
+    redirect: autopark/autorent/bookings
+    redirectClose: autopark/autorent/bookings

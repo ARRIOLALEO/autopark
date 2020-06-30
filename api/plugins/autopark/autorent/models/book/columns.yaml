@@ -1,0 +1,21 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        sortable: true
+    clie_name:
+        label: 'Customer Name'
+        type: text
+        searchable: true
+        sortable: true
+    pickup:
+        label: 'Pick UP'
+        type: datetime
+        searchable: true
+        sortable: true
+    dropoff:
+        label: dropOFF
+        type: datetime
+        searchable: true
+        sortable: true

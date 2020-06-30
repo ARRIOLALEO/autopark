@@ -1,0 +1,38 @@
+fields:
+    pickup:
+        label: Pickup
+        mode: datetime
+        span: auto
+        type: datepicker
+    dropoff:
+        label: DropOff
+        mode: datetime
+        span: auto
+        type: datepicker
+    pricerented:
+        label: Price
+        span: auto
+        type: number
+    deposit:
+        label: Deposti
+        span: auto
+        type: number
+    clie_name:
+        label: 'Customer Name'
+        span: auto
+        type: text
+    clie_contac:
+        label: 'Customer Contact'
+        span: auto
+        type: text
+    tittle:
+        label: Car
+        nameFrom: tittle
+        descriptionFrom: description
+        span: auto
+        type: relation
+    notes:
+        label: 'Notas Extras'
+        size: ''
+        span: auto
+        type: textarea

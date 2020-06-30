@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="container">
-           <carlist filtered />
+           <carlist/>
         </div>
     </div>
 </template>

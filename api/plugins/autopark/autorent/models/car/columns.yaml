@@ -7,3 +7,8 @@ columns:
     avaliable:
         label: avaliable
         type: switch
+    id:
+        label: id
+        type: number
+        searchable: true
+        sortable: true

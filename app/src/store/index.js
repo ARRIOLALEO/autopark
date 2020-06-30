@@ -9,13 +9,17 @@ export default new Vuex.Store({
     cars: [],
     places: [],
     filteredlocations: [],
+    location: null,
+    bookings: [],
     pickup: '',
     dropoff: ''
   },
   getters: {
     allcars: state => state.cars,
     allplaces: state => state.places,
-    filteredcars: state => state.filteredlocations,
+    filteredlocations: state => state.filteredlocations,
+    bookings: state => state.bookings,
+    location: state => state.location,
     pickupDate: state => state.pickup,
     dropOffDate: state => state.dropoff
   },
@@ -26,14 +30,20 @@ export default new Vuex.Store({
     GET_PLACES: (state, places) => {
       state.places = places
     },
-    SET_FILTERS: (state, filterlocations) => {
-      state.filteredlocations = filterlocations
+    GET_LOCATION: (state, location) => {
+      state.location = location
     },
-    SET_PICKUP:(state, pickup) => {
-      state.pickup= pickup
+    SET_FILTERS: (state, filtered) => {
+      state.filteredlocations = filtered
     },
-    SET_DROPOFF:(state, dropoff) => {
-      state.dropoff= dropoff
+    SET_PICKUP: (state, pickup) => {
+      state.pickup = pickup
+    },
+    SET_DROPOFF: (state, dropoff) => {
+      state.dropoff = dropoff
+    },
+    SET_BOOKINGS: (state, bookings) => {
+      state.bookings = bookings
     }
   },
   actions: {
@@ -42,26 +52,35 @@ export default new Vuex.Store({
         commit('GET_CARS', response.data)
       })
     },
+    bookings ({ commit }) {
+      axios.get('http://localhost/sysauto/api/Booking/').then(response => {
+        commit('SET_BOOKINGS', response.data)
+      })
+    },
     getplaces ({ commit }) {
       axios.get('http://localhost/sysauto/api/Places').then(response => {
         commit('GET_PLACES', response.data)
       })
     },
-    carslocation ({ commit, state }, value) {
+    carslocation ({ commit, state }) {
       const filtered = state.cars.filter(car => {
         const fundLocations = car.location.findIndex(place => {
-          return place.id === value
+          return place.id === this.state.location
         })
         return fundLocations !== -1
       })
+      // console.log(filtered)
       commit('SET_FILTERS', filtered)
     },
-    carsdaterent ({ commit, state }, date){
+    location ({ commit, state }, value) {
+      commit('GET_LOCATION', value)
+    },
+    carsdaterent ({ commit, state }, date) {
       if (date.type === 'pickup') {
-        commit('SET_PICKUP',date.value)
+        commit('SET_PICKUP', date.value)
         return
       }
-      commit('SET_DROPOFF',date.value)
+      commit('SET_DROPOFF', date.value)
     }
   },
   modules: {

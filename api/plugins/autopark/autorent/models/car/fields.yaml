@@ -25,6 +25,14 @@ fields:
         label: 'Price 1 - 3'
         span: auto
         type: text
+    price2:
+        label: 'Price 4- 7'
+        span: auto
+        type: text
+    price3:
+        label: 'more than 8 days'
+        span: auto
+        type: text
     image:
         label: 'Upload Image'
         mode: image

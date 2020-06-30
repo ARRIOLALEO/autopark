@@ -14,6 +14,7 @@ export default {
   mounted () {
     Store.dispatch('getcars')
     Store.dispatch('getplaces')
+    Store.dispatch('bookings')
   }
 }
 </script>

@@ -10,3 +10,8 @@ Route::get('Places', function(){
 $places = location::all();
 return $places;
 });
+use autopark\autorent\models\book;
+Route::get('Booking', function(){
+    $bookings = book::with(['tittle'])->get();
+    return $bookings;
+});

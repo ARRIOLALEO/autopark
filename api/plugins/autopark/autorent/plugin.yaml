@@ -18,3 +18,7 @@ navigation:
                 label: Dates
                 url: autopark/autorent/date
                 icon: icon-calendar
+            Books:
+                label: books
+                url: autopark/autorent/bookings
+                icon: icon-calendar
