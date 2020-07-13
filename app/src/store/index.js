@@ -12,7 +12,8 @@ export default new Vuex.Store({
     location: null,
     bookings: [],
     pickup: '',
-    dropoff: ''
+    dropoff: '',
+    carselected: []
   },
   getters: {
     allcars: state => state.cars,
@@ -21,7 +22,8 @@ export default new Vuex.Store({
     bookings: state => state.bookings,
     location: state => state.location,
     pickupDate: state => state.pickup,
-    dropOffDate: state => state.dropoff
+    dropOffDate: state => state.dropoff,
+    carselected: state => state.carselected
   },
   mutations: {
     GET_CARS: (state, cars) => {
@@ -44,6 +46,9 @@ export default new Vuex.Store({
     },
     SET_BOOKINGS: (state, bookings) => {
       state.bookings = bookings
+    },
+    SET_CARSELECTED: (state, foundcar) => {
+      state.carselected = foundcar
     }
   },
   actions: {
@@ -61,6 +66,13 @@ export default new Vuex.Store({
       axios.get('http://localhost/sysauto/api/Places').then(response => {
         commit('GET_PLACES', response.data)
       })
+    },
+    selectedcar ({ commit, id }) {
+      const foundcar = this.state.cars.filter(car => {
+        const recordedcar = car.id === this.id
+        return recordedcar
+      })
+      commit('SET_CARSELECTED', foundcar)
     },
     carslocation ({ commit, state }) {
       const filtered = state.cars.filter(car => {

@@ -15,6 +15,7 @@ export default {
     Store.dispatch('getcars')
     Store.dispatch('getplaces')
     Store.dispatch('bookings')
+    Store.dispatch('selectedcar')
   }
 }
 </script>

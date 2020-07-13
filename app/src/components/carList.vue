@@ -1,36 +1,42 @@
 <template>
-    <div>
+    <div class="px-6">
         <h2>Car List</h2>
-            <div v-for="vehicle in filterVehicles" :key="vehicle.id" class="md:flex shadow-lg  mx-5 md:mx-auto my-5 max-w-lg md:max-w-1xl float-left">
-   <img class="w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" v-bind:src="vehicle.image.path"/>
+            <div v-for="vehicle in filterVehicles" :key="vehicle.id" class="px-2 md:flex shadow-lg w-full md:w-1/3 float-left">
+   <img class="w-full md:w-1/3  object-cover rounded-lg rounded-r-none" v-bind:src="vehicle.image.path"/>
    <div class=" md:w-2/3 px-4 py-4 bg-white rounded-lg">
-   {{ dates.start }}<br/>
-    {{ dates.end }}<br/>
-    {{ dates.daysBetween}}
-      <div class="flex items-center">
+
+      <div class="flex">
          <h2 class="text-xl text-gray-800 font-medium mr-auto"> {{ vehicle.tittle }}</h2>
-            <i class="text-gray-600 line-through">
-               <div class="text-sm text-gray-700 mt-4" v-if="dates.daysBetween < 4">
-{{ vehicle.price1 }}
-{{ total(vehicle.price1,dates.daysBetween) }}
-</div>
-<div  class="text-sm text-gray-700 mt-4" v-else-if="dates.daysBetween >= 4 && dates.daysBetween < 7">
-{{ vehicle.price2 }}
-{{ total(vehicle.price2,dates.daysBetween) }}
-</div>
-<div class="text-sm text-gray-700 mt-4" v-else-if="dates.daysBetween >= 7">
-{{ vehicle.price3 }}
-{{ total(vehicle.price3,dates.daysBetween) }}
-</div>
-               </i>
+      </div>
+          <div class="flex">
+               <div class="text-m text-black-700 text-left" v-if="dates.daysBetween < 4">
+                   <span><strong>Pick up date :</strong>{{ dates.start }}<br/></span>
+                   <span><strong>Drop Off Date:</strong>{{ dates.end }}<br/></span>
+                   <span><strong># of Days    :</strong>{{ dates.daysBetween}}<br/></span>
+                   <span><strong>Price/day    : $</strong>{{ vehicle.price1 }}<br/></span>
+                   <span><strong>Total        : $</strong>{{ total(vehicle.price1,dates.daysBetween) }}</span>
+       </div>
+      <div  class="text-m text-gray-700 text-left" v-else-if="dates.daysBetween >= 4 && dates.daysBetween < 7">
+                    <span><strong>Pick up date :</strong>{{ dates.start }}<br/></span>
+                    <span><strong>Drop Off Date:</strong>{{ dates.end }}<br/></span>
+                    <span><strong># of Days    :</strong>{{ dates.daysBetween}}<br/></span>
+                    <span><strong>Price/day    : $</strong>{{ vehicle.price2 }}<br/></span>
+                    <span><strong>Total        : $</strong>{{ total(vehicle.price2,dates.daysBetween) }}</span>
+       </div>
+       <div class="text-m text-gray-700 text-left" v-else-if="dates.daysBetween >= 7">
+                    <span><strong>Pick up date :</strong>{{ dates.start }}<br/></span>
+                    <span><strong>Drop Off Date:</strong>{{ dates.end }}<br/></span>
+                    <span><strong># of Days    :</strong>{{ dates.daysBetween}}<br/></span>
+                    <span><strong>Price/day    : $</strong>{{ vehicle.price3 }}<br/></span>
+                    <span><strong>Total        : $</strong>{{ total(vehicle.price3,dates.daysBetween) }}</span>
+       </div>
       </div>
       <div class="flex items-center justify-end mt-4 top-auto">
-         <button class="bg-white text-red-500 px-4 py-2 rounded mr-auto hover:underline">Delete</button>
-         <button class=" bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2">Edit</button>
-         <button class=" bg-blue-600 text-gray-200 px-2 py-2 rounded-md ">Publish</button>
+         <router-link :to="{ name: 'confirmation', params: { id: vehicle.id } }">BOOK</router-link>
       </div>
    </div>
         </div>
+        <router-view/>
     </div>
 </template>
 <script>
